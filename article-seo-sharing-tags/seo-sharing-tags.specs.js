@@ -11,7 +11,7 @@ const shareMetaTags = [
     { name: 'og:url', content: 'https://www.cosmopolitan.com/style-beauty/fashion/g28749279/types-of-coats/' }
 ];
 
-describe('Verify The Visibility Of SEO Tags Cosmopolitan Website:', () => {
+describe('Verify The Visibility Of SEO Tags Cosmopolitan Website', () => {
     beforeAll(() => {
         browser.get(ARTICLE_URL);
     });

@@ -5,7 +5,9 @@ exports.config = {
     capabilities: {
         browserName: 'chrome',
         chromeOptions: {
-            args: ["--window-size=1200,800"]
+            args: ["--window-size=1200,800",
+                "--headless"
+            ]
         }
     },
     framework: 'jasmine',
