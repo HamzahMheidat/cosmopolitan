@@ -16,24 +16,24 @@ describe('Verify SEO tags cosmopolitan website:', () => {
         browser.get(ARTICLE_URL);
     });
 
-    it(`Should verify that title tag exists in the page header`, async() => {
+    it(`should verify that title tag exists in the page header`, async() => {
         const titleTag = await element(by.css(tagLocators.title));
         expect(titleTag.isPresent()).toBe(true);
     });
 
-    it(`Should verify that title tag has a contain same as expected`, async() => {
+    it(`should verify that title tag has a contain same as expected`, async() => {
         const title = '27 Types of Coats and Jackets - What Are the Types of Coats?';
         const titleTag = await element(by.css(tagLocators.title));
         expect(titleTag.getAttribute('innerText')).toEqual(title);
     });
 
     seoMetaTags.forEach(async seoTag => {
-        it(`Should verify that SEO meta tag (${seoTag.name}) exist in the page header`, async() => {
+        it(`should verify that SEO meta tag (${seoTag.name}) exist in the page header`, async() => {
             const seoMetaTag = await seoSharingTagsPageObjects.getMetaTag(seoTag.name);
             expect(seoMetaTag.isPresent()).toBe(true);
         });
 
-        it(`Should verify that SEO meta tag (${seoTag.name}) content`, async() => {
+        it(`should verify that SEO meta tag (${seoTag.name}) content`, async() => {
             const seoMetaTag = await seoSharingTagsPageObjects.getMetaTag(seoTag.name);
             const seoMetaTagContent = await seoMetaTag.getAttribute('content');
             expect(seoMetaTagContent).toEqual(seoTag.content);
@@ -47,12 +47,12 @@ describe('Verify Share tags in the header of cosmopolitan website:', () => {
     });
 
     shareMetaTags.forEach(async shareTag => {
-        it(`Should verify that share meta tag (${shareTag.name}) exist in the page header`, async() => {
+        it(`should verify that share meta tag (${shareTag.name}) exist in the page header`, async() => {
             const shareMetaTag = await seoSharingTagsPageObjects.getMetaTag(shareTag.name);
             expect(shareMetaTag.isPresent()).toBe(true);
         });
 
-        it(`Should verify share meta tag (${shareTag.name}) content`, async() => {
+        it(`should verify share meta tag (${shareTag.name}) content`, async() => {
             const shareMetaTag = await seoSharingTagsPageObjects.getMetaTag(shareTag.name);
             const shareMetaTagContent = await shareMetaTag.getAttribute('content');
             expect(shareMetaTagContent).toEqual(shareTag.content);
